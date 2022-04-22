@@ -16561,6 +16561,8 @@ L:	linux-mediatek@lists.infradead.org (moderated for non-subscribers)
 S:	Maintained
 F:	Documentation/devicetree/bindings/pinctrl/mediatek,mt6779-pinctrl.yaml
 F:	include/dt-bindings/pinctrl/mediatek,mt6735-pinfunc.h
+F:	drivers/pinctrl/mediatek/pinctrl-mt6735.c
+F:	drivers/pinctrl/mediatek/pinctrl-mtk-mt6735.h
 
 PIN CONTROLLER - MICROCHIP AT91
 M:	Ludovic Desroches <ludovic.desroches@microchip.com>
