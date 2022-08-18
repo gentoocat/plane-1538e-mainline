@@ -25,6 +25,7 @@ properties:
     oneOf:
       - enum:
         - mediatek,mt2701-pwrap
+        - mediatek,mt6735-pwrap
         - mediatek,mt6765-pwrap
         - mediatek,mt6779-pwrap
         - mediatek,mt6797-pwrap
@@ -85,6 +86,7 @@ allOf:
           contains:
             enum:
               - mediatek,mt2701-pwrap
+              - mediatek,mt6735-pwrap
               - mediatek,mt6765-pwrap
               - mediatek,mt6797-pwrap
               - mediatek,mt7622-pwrap
