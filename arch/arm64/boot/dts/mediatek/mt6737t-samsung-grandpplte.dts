@@ -6,9 +6,11 @@
 /dts-v1/;
 
 #include "mt6735.dtsi"
+#include "mt6328.dtsi"
 #include <dt-bindings/clock/mediatek,mt6735-imgsys.h>
 #include <dt-bindings/clock/mediatek,mt6735-mfgsys.h>
 #include <dt-bindings/clock/mediatek,mt6735-mmsys.h>
+#include <dt-bindings/input/input.h>
 
 / {
 	model = "Samsung Galaxy Grand Prime+";
@@ -64,6 +66,20 @@
 			no-map;
 		};
 	};
+};
+
+&mt6328_keys {
+	status = "okay";
+
+	power-off-time-sec = <10>;
+};
+
+&mt6328_home {
+	linux,keycodes = <KEY_VOLUMEDOWN>;
+};
+
+&pwrap {
+	status = "okay";
 };
 
 /*
