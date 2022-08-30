@@ -539,6 +539,19 @@ static const struct mtk_mmc_compatible mt2712_compat = {
 	.support_64g = true,
 };
 
+static const struct mtk_mmc_compatible mt6735_compat = {
+	.clk_div_bits = 8,
+	.recheck_sdio_irq = false,
+	.hs400_tune = false,
+	.pad_tune_reg = MSDC_PAD_TUNE0,
+	.async_fifo = false,
+	.data_tune = true,
+	.busy_check = false,
+	.stop_clk_fix = false,
+	.enhance_rx = false,
+	.support_64g = true,
+};
+
 static const struct mtk_mmc_compatible mt7622_compat = {
 	.clk_div_bits = 12,
 	.recheck_sdio_irq = true,
@@ -598,6 +611,7 @@ static const struct of_device_id msdc_of_ids[] = {
 	{ .compatible = "mediatek,mt7622-mmc", .data = &mt7622_compat},
 	{ .compatible = "mediatek,mt8516-mmc", .data = &mt8516_compat},
 	{ .compatible = "mediatek,mt7620-mmc", .data = &mt7620_compat},
+	{ .compatible = "mediatek,mt6735-mmc", .data = &mt6735_compat},
 	{ .compatible = "mediatek,mt6779-mmc", .data = &mt6779_compat},
 	{}
 };
@@ -1701,10 +1715,10 @@ static void msdc_init_hw(struct msdc_host *host)
 		writel(0, host->base + tune_reg);
 	}
 	writel(0, host->base + MSDC_IOCON);
-	sdr_set_field(host->base + MSDC_IOCON, MSDC_IOCON_DDLSEL, 0);
+	sdr_set_field(host->base + MSDC_IOCON, MSDC_IOCON_DDLSEL, 1);
 	writel(0x403c0046, host->base + MSDC_PATCH_BIT);
 	sdr_set_field(host->base + MSDC_PATCH_BIT, MSDC_CKGEN_MSDC_DLY_SEL, 1);
-	writel(0xffff4089, host->base + MSDC_PATCH_BIT1);
+	writel(0xffff40c9, host->base + MSDC_PATCH_BIT1);
 	sdr_set_bits(host->base + EMMC50_CFG0, EMMC50_CFG_CFCSTS_SEL);
 
 	if (host->dev_comp->stop_clk_fix) {
