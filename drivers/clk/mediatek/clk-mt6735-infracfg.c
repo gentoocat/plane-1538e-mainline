@@ -46,7 +46,7 @@ static const struct mtk_gate infracfg_gates[] = {
 static u16 infracfg_rst_ofs[] = { INFRA_RST0 };
 
 static const struct mtk_clk_rst_desc infracfg_resets = {
-	.version = MTK_RST_SET_CLR,
+	.version = MTK_RST_SIMPLE,
 	.rst_bank_ofs = infracfg_rst_ofs,
 	.rst_bank_nr = ARRAY_SIZE(infracfg_rst_ofs)
 };
