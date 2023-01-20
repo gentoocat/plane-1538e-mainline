@@ -35,7 +35,7 @@ static const struct mtk_mmsys_driver_data mt2712_mmsys_driver_data = {
 
 static const struct mtk_mmsys_driver_data mt6735_mmsys_driver_data = {
 	.clk_driver = "clk-mt6735-mm",
-	.routes = mt8167_mmsys_routing_table,
+	.routes = mt6735_mmsys_routing_table,
 	.num_routes = ARRAY_SIZE(mt6735_mmsys_routing_table),
 	.sw0_rst_offset = MT6735_MMSYS_SW0_RST_B,
 	.lcm_rst_offset = MT6735_MMSYS_LCM_RST_B,
