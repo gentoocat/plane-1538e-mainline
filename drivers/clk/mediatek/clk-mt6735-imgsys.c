@@ -24,7 +24,7 @@ static struct mtk_gate_regs imgsys_cg_regs = {
 static const struct mtk_gate imgsys_gates[] = {
 	GATE_MTK(SMI_LARB2, "smi_larb2", "mm_sel", &imgsys_cg_regs, 0, &mtk_clk_gate_ops_setclr),
 	GATE_MTK(CAM_SMI, "cam_smi", "mm_sel", &imgsys_cg_regs, 5, &mtk_clk_gate_ops_setclr),
-	GATE_MTK(CAM_CAM, "sen_tg", "mm_sel", &imgsys_cg_regs, 6, &mtk_clk_gate_ops_setclr),
+	GATE_MTK(CAM_CAM, "cam_cam", "mm_sel", &imgsys_cg_regs, 6, &mtk_clk_gate_ops_setclr),
 	GATE_MTK(SEN_TG, "sen_tg", "mm_sel", &imgsys_cg_regs, 7, &mtk_clk_gate_ops_setclr),
 	GATE_MTK(SEN_CAM, "sen_cam", "mm_sel", &imgsys_cg_regs, 8, &mtk_clk_gate_ops_setclr),
 	GATE_MTK(CAM_SV, "cam_sv", "mm_sel", &imgsys_cg_regs, 9, &mtk_clk_gate_ops_setclr),
