@@ -10,6 +10,7 @@ Required properties:
 	"mediatek,mt2712-wdt": for MT2712
 	"mediatek,mt6582-wdt", "mediatek,mt6589-wdt": for MT6582
 	"mediatek,mt6589-wdt": for MT6589
+	"mediatek,mt6735-wdt": for MT6735
 	"mediatek,mt6797-wdt", "mediatek,mt6589-wdt": for MT6797
 	"mediatek,mt7622-wdt", "mediatek,mt6589-wdt": for MT7622
 	"mediatek,mt7623-wdt", "mediatek,mt6589-wdt": for MT7623
