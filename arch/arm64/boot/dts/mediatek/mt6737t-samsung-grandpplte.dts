@@ -177,6 +177,17 @@
 	status = "okay";
 
 	vbus-supply = <&mt6328_vio18_reg>;
+
+	fuel-gauge@3b {
+		compatible = "samsung,s2mu005-fg";
+		reg = <0x3b>;
+
+		interrupt-parent = <&pio>;
+		interrupts = <76 IRQ_TYPE_EDGE_FALLING>;
+
+		pinctrl-names = "default";
+		pinctrl-0 = <&s2mu005_fg_default>;
+	};
 };
 
 &i2c3 {
@@ -277,6 +288,13 @@
 	panel_default: panel-default-pins {
 		pins-reset {
 			pinmux = <PINMUX_GPIO146__FUNC_GPIO146>;
+		};
+	};
+
+	s2mu005_fg_default: s2mu005-fg-default-pins {
+		pins-int {
+			pinmux = <PINMUX_GPIO76__FUNC_GPIO76>;
+			input-enable;
 		};
 	};
 
